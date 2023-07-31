@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "/api-epurchasing/v1/vendors")
+@RequestMapping(path = "/api/v1/vendors")
 public class VendorController {
 
     private final VendorService vendorService;
@@ -36,7 +36,7 @@ public class VendorController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(CommonResponse.builder()
                         .statusCode(HttpStatus.OK.value())
-                        .message("Successfully get all store data")
+                        .message("Successfully get all vendor data")
                         .data(vendors)
                         .build());
     }

@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "/api-epurchasing/v1/orders")
+@RequestMapping(path = "/api/v1/orders")
 public class OrderController {
 
     private final OrderService orderService;
@@ -28,7 +28,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(CommonResponse.builder()
                         .statusCode(HttpStatus.CREATED.value())
-                        .message("Successfully create new transaction")
+                        .message("Successfully create new order")
                         .data(orderResponse)
                         .build());
     }
@@ -39,7 +39,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(CommonResponse.builder()
                         .statusCode(HttpStatus.OK.value())
-                        .message("Successfully get all transaction")
+                        .message("Successfully get all order")
                         .data(orderResponses)
                         .build());
     }

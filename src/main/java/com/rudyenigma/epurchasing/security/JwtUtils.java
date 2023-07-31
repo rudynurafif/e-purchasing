@@ -11,7 +11,7 @@ import java.util.Date;
 @Slf4j
 public class JwtUtils {
 
-    @Value("ZXByb2N1cmVtZW50cnVkeQ==")
+    @Value("ZXB1cmNoYXNpbmdydWR5")
     private String jwtSecret;
 
     @Value("36000000")
@@ -29,7 +29,6 @@ public class JwtUtils {
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpiration))
                 .compact();
-
     }
 
     public boolean validateJwtToken(String token) {

@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "/api-epurchasing/v1/products")
+@RequestMapping(path = "/api/v1/products")
 public class ProductController {
     private final ProductService productService;
 
@@ -49,7 +49,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(CommonResponse.builder()
                         .statusCode(HttpStatus.OK.value())
-                        .message("Successfully get customer")
+                        .message("Successfully get product")
                         .data(productResponse)
                         .build());
     }
@@ -82,7 +82,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(CommonResponse.<ProductResponse>builder()
                         .statusCode(HttpStatus.OK.value())
-                        .message("Successfully update customer")
+                        .message("Successfully update product")
                         .data(productResponse)
                         .build());
     }
@@ -93,7 +93,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(CommonResponse.<String>builder()
                         .statusCode(HttpStatus.OK.value())
-                        .message("Successfully delete customer")
+                        .message("Successfully delete product")
                         .build());
     }
 
